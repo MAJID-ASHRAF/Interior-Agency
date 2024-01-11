@@ -1,5 +1,18 @@
 import React from "react";
 import MainButton from "../common/MainButton";
+import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+
 
 function HeroSection() {
   return (
@@ -40,11 +53,36 @@ function HeroSection() {
             />
           </div>
           <div className="flex items-center mt-6 hover:cursor-pointer">
-            <img
+          <Dialog>
+      <DialogTrigger asChild>
+      <img
               src="/images/play-shadow.png"
               alt="rounded play icon with shadow"
             />
-            <p className="text-lightGrayAlt -mt-6">Play Demo</p>
+      </DialogTrigger>
+      <p className="text-lightGrayAlt -mt-6">Play Demo</p>
+
+      <DialogContent  className="sm:max-w-[700px] z-[9999]">
+        <DialogHeader>
+          {/* <DialogTitle>Edit profile</DialogTitle>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you`&apos;`re done.
+          </DialogDescription> */}
+        </DialogHeader>
+        <div className="grid gap-2 py-2">
+              {/* Embed YouTube video using an iframe */}
+              <iframe
+                width="100%"
+                height="400"
+                src="https://www.youtube.com/embed/KqguALYIbAk"
+                title="YouTube Video"
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
+            </div>
+      </DialogContent>
+    </Dialog>
+           
           </div>
         </div>
       </div>
@@ -54,8 +92,12 @@ function HeroSection() {
           alt="girl with phone with aircrafts on the background"
         />
       </div>
+     
     </section>
   );
 }
 
 export default HeroSection;
+
+
+
